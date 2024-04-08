@@ -39,10 +39,20 @@ public class EmployeeService {
         return employeeList.stream().map(employee -> modelMapper.map(employee, EmployeeDTO.class)).collect(Collectors.toList());
     }
 
+    public List<DepartmentDTO> findDepartmentList() {
+        List<Department> departmentList = departmentRepository.findAll(Sort.by("dptNo"));
+        return departmentList.stream().map(department -> modelMapper.map(department, DepartmentDTO.class)).collect(Collectors.toList());
+    }
+
     @Transactional
     public void registNewEmp(EmployeeDTO newEmp) {
         System.out.println("newEmp = " + newEmp);
         employeeRepository.save(modelMapper.map(newEmp, Employee.class));
+    }
+
+    @Transactional
+    public void registNewDpt(DepartmentDTO newDpt) {
+        departmentRepository.save(modelMapper.map(newDpt, Department.class));
     }
 
     @Transactional
@@ -60,9 +70,9 @@ public class EmployeeService {
         employeeRepository.deleteById(empNo);
     }
 
-//    @Transactional
-//    public void registNewDpt(DepartmentDTO newDpt) {
-//        employeeRepository.save(modelMapper.map(newDpt, Department.class));
-//
-//    }
+
+    public List<DepartmentDTO> findDptList() {
+        List<Department> departmentList = departmentRepository.findAllDpt();
+        return departmentList.stream().map(department -> modelMapper.map(department, DepartmentDTO.class)).collect(Collectors.toList());
+    }
 }

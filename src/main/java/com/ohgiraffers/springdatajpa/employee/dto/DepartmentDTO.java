@@ -10,17 +10,17 @@ public class DepartmentDTO {
 
     private String dptName;
 
-//    private List<EmployeeDTO> employeeDTOList;
+    private List<EmployeeDTO> employeeDTOList;
 
 
     public DepartmentDTO() {
     }
 
-//    public DepartmentDTO(int dptNo, String dptName, List<EmployeeDTO> employeeDTOList) {
-//        this.dptNo = dptNo;
-//        this.dptName = dptName;
-//        this.employeeDTOList = employeeDTOList;
-//    }
+    public DepartmentDTO(int dptNo, String dptName, List<EmployeeDTO> employeeDTOList) {
+        this.dptNo = dptNo;
+        this.dptName = dptName;
+        this.employeeDTOList = employeeDTOList;
+    }
 
 
     public DepartmentDTO(int dptNo, String dptName) {
@@ -44,21 +44,12 @@ public class DepartmentDTO {
         this.dptName = dptName;
     }
 
-//    @Override
-//    public String toString() {
-//        return "DepartmentDTO{" +
-//                "dptNo=" + dptNo +
-//                ", dptName='" + dptName + '\'' +
-//                ", employeeDTOList=" + employeeDTOList +
-//                '}';
-//    }
-
-
     @Override
     public String toString() {
         return "DepartmentDTO{" +
                 "dptNo=" + dptNo +
                 ", dptName='" + dptName + '\'' +
+                ", employeeDTOList=" + employeeDTOList +
                 '}';
     }
 }

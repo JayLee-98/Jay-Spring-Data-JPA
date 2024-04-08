@@ -12,8 +12,8 @@ public class Employee {
     private int empNo;
     @Column(name = "emp_name")
     private String empName;
-//    @Column(name = "dpt_no")
-//    private int dptNo;
+    @Column(name = "dpt_no")
+    private int dptNo;
     @Column(name = "enroll_date")
     private String enrollDate;
     @Column(name = "emp_gender")
@@ -30,10 +30,10 @@ public class Employee {
         return this;
     }
 
-//    public Employee dptNo (int val) {
-//        this.dptNo = val;
-//        return this;
-//    }
+    public Employee dptNo (int val) {
+        this.dptNo = val;
+        return this;
+    }
 
     public Employee enrollDate(String val) {
         this.enrollDate = val;
@@ -56,13 +56,9 @@ public class Employee {
         return this;
     }
 
-//    public Employee builder() {
-//        return new Employee(empNo, empName,  dptNo, enrollDate, empGender, empPhone, empAddress);
-//    }
     public Employee builder() {
-        return new Employee(empNo, empName, enrollDate, empGender, empPhone, empAddress);
+        return new Employee(empNo, empName,  dptNo, enrollDate, empGender, empPhone, empAddress);
     }
-
     protected Employee() {
     }
 
@@ -75,20 +71,20 @@ public class Employee {
         this.empAddress = empAddress;
     }
 
-//    public Employee(int empNo, String empName, int dptNo, String enrollDate, char empGender, String empPhone, String empAddress) {
-//        this.empNo = empNo;
-//        this.empName = empName;
-//        this.dptNo = dptNo;
-//        this.enrollDate = enrollDate;
-//        this.empGender = empGender;
-//        this.empPhone = empPhone;
-//        this.empAddress = empAddress;
-//    }
+    public Employee(int empNo, String empName, int dptNo, String enrollDate, char empGender, String empPhone, String empAddress) {
+        this.empNo = empNo;
+        this.empName = empName;
+        this.dptNo = dptNo;
+        this.enrollDate = enrollDate;
+        this.empGender = empGender;
+        this.empPhone = empPhone;
+        this.empAddress = empAddress;
+    }
 
 
-//    public int getDptNo() {
-//        return dptNo;
-//    }
+    public int getDptNo() {
+        return dptNo;
+    }
 
     public int getEmpNo() {
         return empNo;
@@ -114,29 +110,17 @@ public class Employee {
         return empAddress;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Employee{" +
-//                "empNo=" + empNo +
-//                ", empName='" + empName + '\'' +
-//                ", dptNo=" + dptNo +
-//                ", enrollDate='" + enrollDate + '\'' +
-//                ", empGender=" + empGender +
-//                ", empPhone='" + empPhone + '\'' +
-//                ", empAddress='" + empAddress + '\'' +
-//                '}';
-//    }
-
-
     @Override
     public String toString() {
         return "Employee{" +
                 "empNo=" + empNo +
                 ", empName='" + empName + '\'' +
+                ", dptNo=" + dptNo +
                 ", enrollDate='" + enrollDate + '\'' +
                 ", empGender=" + empGender +
                 ", empPhone='" + empPhone + '\'' +
                 ", empAddress='" + empAddress + '\'' +
                 '}';
     }
+
 }

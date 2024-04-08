@@ -36,6 +36,14 @@ public class EmployeeController {
         return "menu/employeeList";
     }
 
+    @GetMapping("/departmentList")
+    public String findDepartmentList(Model model) {
+        List<DepartmentDTO> departmentList = employeeService.findDepartmentList();
+        model.addAttribute("dptList", departmentList);
+
+        return "menu/departmentList";
+    }
+
     @GetMapping("/registEmp")
     public void registEmpPage() {}
 
@@ -45,14 +53,20 @@ public class EmployeeController {
         return "redirect:/menu/employeeList";
     }
 
+    @GetMapping(value = "/dptNo", produces = "application/json; charset=UTF-8")
+    @ResponseBody
+    public List<DepartmentDTO> findDptList() {
+        return employeeService.findDptList();
+    }
+
     @GetMapping("/registDpt")
     public void registDptPage() {}
 
-//    @PostMapping("/registDpt")
-//    public String registDpt(DepartmentDTO newDpt) {
-//        employeeService.registNewDpt(newDpt);
-//        return "redirect:/menu/departmentList";
-//    }
+    @PostMapping("/registDpt")
+    public String registDpt(DepartmentDTO newDpt) {
+        employeeService.registNewDpt(newDpt);
+        return "redirect:/menu/departmentList";
+    }
 
     @GetMapping("/updateEmp")
     public void updateEmpPage() {}

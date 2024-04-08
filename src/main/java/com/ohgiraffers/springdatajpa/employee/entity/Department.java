@@ -14,7 +14,7 @@ public class Department {
     private int dptNo;
 
     @Column(name = "dpt_name")
-    private int dptName;
+    private String dptName;
 
     @OneToMany(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "dpt_no")
@@ -23,7 +23,7 @@ public class Department {
     protected Department() {
     }
 
-    public Department(int dptNo, int dptName, List<Employee> employeeList) {
+    public Department(int dptNo, String dptName, List<Employee> employeeList) {
         this.dptNo = dptNo;
         this.dptName = dptName;
         this.employeeList = employeeList;
@@ -33,7 +33,7 @@ public class Department {
         return dptNo;
     }
 
-    public int getDptName() {
+    public String getDptName() {
         return dptName;
     }
 

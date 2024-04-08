@@ -4,7 +4,7 @@ public class EmployeeDTO {
     private int empNo;
     private String empName;
 
-//    private int dptNo;
+    private int dptNo;
     private String enrollDate;
     private char empGender;
     private String empPhone;
@@ -13,33 +13,23 @@ public class EmployeeDTO {
     public EmployeeDTO() {
     }
 
-//    public EmployeeDTO(int empNo, String empName, int dptNo, String enrollDate, char empGender, String empPhone, String empAddress) {
-//        this.empNo = empNo;
-//        this.empName = empName;
-//        this.dptNo = dptNo;
-//        this.enrollDate = enrollDate;
-//        this.empGender = empGender;
-//        this.empPhone = empPhone;
-//        this.empAddress = empAddress;
-//    }
-
-
-    public EmployeeDTO(int empNo, String empName, String enrollDate, char empGender, String empPhone, String empAddress) {
+    public EmployeeDTO(int empNo, String empName, int dptNo, String enrollDate, char empGender, String empPhone, String empAddress) {
         this.empNo = empNo;
         this.empName = empName;
+        this.dptNo = dptNo;
         this.enrollDate = enrollDate;
         this.empGender = empGender;
         this.empPhone = empPhone;
         this.empAddress = empAddress;
     }
 
-//    public int getDptNo() {
-//        return dptNo;
-//    }
-//
-//    public void setDptNo(int dptNo) {
-//        this.dptNo = dptNo;
-//    }
+    public int getDptNo() {
+        return dptNo;
+    }
+
+    public void setDptNo(int dptNo) {
+        this.dptNo = dptNo;
+    }
 
 
 
@@ -91,25 +81,12 @@ public class EmployeeDTO {
         this.empAddress = empAddress;
     }
 
-//    @Override
-//    public String toString() {
-//        return "EmployeeDTO{" +
-//                "empNo=" + empNo +
-//                ", empName='" + empName + '\'' +
-//                ", dptNo=" + dptNo +
-//                ", enrollDate='" + enrollDate + '\'' +
-//                ", empGender=" + empGender +
-//                ", empPhone='" + empPhone + '\'' +
-//                ", empAddress='" + empAddress + '\'' +
-//                '}';
-//    }
-
-
     @Override
     public String toString() {
         return "EmployeeDTO{" +
                 "empNo=" + empNo +
                 ", empName='" + empName + '\'' +
+                ", dptNo=" + dptNo +
                 ", enrollDate='" + enrollDate + '\'' +
                 ", empGender=" + empGender +
                 ", empPhone='" + empPhone + '\'' +

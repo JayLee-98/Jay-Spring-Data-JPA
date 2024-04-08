@@ -10,7 +10,6 @@ import java.util.List;
 
 @Repository
 public interface DepartmentRepository extends JpaRepository<Department, Integer> {
-
-//    @Query(value = "SELECT dpt_no, dpt_name FROM tbl_department ORDER BY dpt_no", nativeQuery = true)
-
+    @Query(value = "SELECT dpt_no, dpt_name FROM tbl_department ORDER BY dpt_no", nativeQuery = true)
+    List<Department> findAllDpt();
 }
